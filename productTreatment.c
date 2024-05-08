@@ -2,7 +2,7 @@
 
 static struct quantidadeProdutos* lojaPointer;
 static int cycle = 0;
-
+//atualiza o estoque do item, e devolve se a quantidade pedida eh valida
 static int updateEstoque(int quantity) {
     if(quantity <= 0) {
         return -1;
@@ -16,13 +16,16 @@ static int updateEstoque(int quantity) {
     }
 }
 
+//vai receber a quantidade
 static int takeQuantity(){
     int quantity = 0;
     printf("Insira a quantidade de unidades: ");
     scanf("%d", &quantity);
     return updateEstoque(quantity);
 }
-static  int bruh() {
+
+//encontra o produto definido pelo usuario
+static  int findProduct() {
     int produtoCode = 0;
     int quantity = 0;
 
@@ -37,19 +40,20 @@ static  int bruh() {
     }
     return quantity;
 }
-//gerencia que o codigo correspondente passe o preco correspondente
+
+//gerencia que o codigo correspondente passe a resposta correspondente
 static float manageInput(struct quantidadeProdutos* activePointer) {
     int quantity = 0;
     cycle = -1;
     lojaPointer = activePointer;
 
-    quantity = bruh();
+    quantity = findProduct();
 
     if(cycle == -1) {
         return 0;
     }
     else if(quantity == 0) {
-        printf("Esse valor é inválido, pois supera a quantidade de estoque atual.");
+        printf("Esse valor ï¿½ invï¿½lido, pois supera a quantidade de estoque atual.");
         sleep(1);
         return -1;
     }

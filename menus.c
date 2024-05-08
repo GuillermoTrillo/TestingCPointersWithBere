@@ -30,9 +30,9 @@ static void mainMenu()
 
 
  static void printStore(struct quantidadeProdutos* storePointer) {
-     showPayQuantity();
-     printf("Codigo /// Nome do produto /// Preco /// quantidade em estoque \n");
-     for(int i = 0; i < storePointer->referencia; i++) {
+    showPayQuantity();
+    printf("Codigo /// Nome do produto /// Preco /// quantidade em estoque \n");
+    for(int i = 0; i < storePointer->referencia; i++) {
         printf("%d", (storePointer->produto+i)->codigo);
         printf(" /// ");
         printf("%s", (storePointer->produto+i)->nome);
@@ -41,6 +41,6 @@ static void mainMenu()
         printf(" /// ");
         printf("%d", (storePointer->produto+i)->estoque);
         printf("\n");
-     }
+    }
 
 }

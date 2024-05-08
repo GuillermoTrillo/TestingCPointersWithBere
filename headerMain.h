@@ -6,6 +6,7 @@
 #include <time.h>
 #include <stdbool.h>
 #include <locale.h>
+#include <stdlib.h>
 
 #include "menus.c"
 #include "padaria.c"

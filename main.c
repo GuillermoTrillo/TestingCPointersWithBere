@@ -7,7 +7,7 @@ struct gastos* gastosPointer = &allGastos;
 
 struct quantidadeProdutos* LojaPointer;
 
-//começa o sistema, setando o troco, mostrando a mensagem de bem-vindo
+//comeï¿½a o sistema, setando o troco, mostrando a mensagem de bem-vindo
 int main()
 {
     setlocale(LC_ALL, "Portuguese");
@@ -87,11 +87,12 @@ void getPadaria() {
 }
 //chama a printagem da loja, enviando o ponteiro da loja escolhida
 void showStore() {
-    int inputAnswer = 0;
     printStore(LojaPointer);
     redirectStore();
 }
+//chama o gerenciador do input do usuario, e usa sua resposta para redirecionar o usuario
 void redirectStore() {
+    int inputAnswer = 0;
     inputAnswer = manageInput(LojaPointer);
 
     if(inputAnswer == 0) {
@@ -104,7 +105,7 @@ void redirectStore() {
         insertPrecoInGastos(inputAnswer);
     }
 }
-
+//inserta o preco do produto selecionado pelo manageInput na variavel gastos
 void insertPrecoInGastos(float preco) {
     if(activeLoja == 1) {
         allGastos.gastosLimpeza += preco;
@@ -116,7 +117,7 @@ void insertPrecoInGastos(float preco) {
         allGastos.gastosPadaria += preco;
     }
     else {
-        printf("\n Nenhuma loja aparentemente ativa. Valor será somente inserido dentro dos gastos totais. \n");
+        printf("\n Nenhuma loja aparentemente ativa. Valor serï¿½ somente inserido dentro dos gastos totais. \n");
     }
     allGastos.gastosTotais += preco;
     showStore();
@@ -129,9 +130,10 @@ void chamarPagamento() {
 void terminarFaturamento() {
 }
 
- void showPayQuantity()
+// mostra os atuais gastos do usuario
+void showPayQuantity()
 {
-    system("cls");
+    system("cls | clear");
     printf("--/--/--/--/--/--/");
     printf("\n");
     printf("Valor da Limpeza a pagar: %0.2f", allGastos.gastosLimpeza);

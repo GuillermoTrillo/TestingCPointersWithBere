@@ -21,11 +21,13 @@ static void setTroco(float *trocoPointer) {
         *trocoPointer = cashBalance;
         return;
     }
+
     else {
-        printf("Valor inválido! Tente de novo!");
+        printf("Valor invï¿½lido! Tente de novo!");
         sleep(1);
-        system("cls");
+        system("cls | clear");
         setTroco(trocoPointer);
+        
     }
 
 }
